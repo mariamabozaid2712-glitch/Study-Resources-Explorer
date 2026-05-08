@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Study Resource Explorer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">📖 Study Resource Explorer</div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('dashboard') }}" class="active">Dashboard</a>
+            <a href="{{ url_for('explorer') }}">Explore Resources</a>
+            <a href="{{ url_for('insights') }}">SQL Insights</a>
+        </div>
+
+        <div class="search-icon">🔍</div>
+    </nav>
+
+    <section class="dashboard-hero">
+        <span class="dashboard-label">EDA Visualization</span>
+        <h1>Study Resources Dashboard</h1>
+        <p>
+            Visual overview of the cleaned study resources dataset collected from
+            W3Schools, GeeksforGeeks, and TutorialsPoint.
+        </p>
+    </section>
+
+    <section class="charts-section">
+
+        <div class="chart-box featured-chart">
+            <div class="chart-title">
+                <h3>Resources per Subject</h3>
+                <p>Shows how many study resources were collected for each subject.</p>
+            </div>
+            <img src="{{ url_for('static', filename='charts/chart_resources_per_subject.png') }}" alt="Resources per Subject">
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">
+                <h3>Resources per Source</h3>
+                <p>Compares the number of resources collected from each website.</p>
+            </div>
+            <img src="{{ url_for('static', filename='charts/chart_resources_per_source.png') }}" alt="Resources per Source">
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">
+                <h3>Content Types</h3>
+                <p>Shows whether the dataset contains more tutorials or articles.</p>
+            </div>
+            <img src="{{ url_for('static', filename='charts/chart_content_types.png') }}" alt="Content Types">
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">
+                <h3>Difficulty Levels</h3>
+                <p>Displays the distribution of Beginner, Intermediate, and Advanced resources.</p>
+            </div>
+            <img src="{{ url_for('static', filename='charts/chart_difficulty_levels.png') }}" alt="Difficulty Levels">
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">
+                <h3>Subject vs Source</h3>
+                <p>Compares which websites provide resources for each subject.</p>
+            </div>
+            <img src="{{ url_for('static', filename='charts/chart_subject_vs_source.png') }}" alt="Subject vs Source">
+        </div>
+
+        <div class="chart-box">
+            <div class="chart-title">
+                <h3>Subject vs Difficulty Level</h3>
+                <p>Shows difficulty level distribution within each subject.</p>
+            </div>
+            <img src="{{ url_for('static', filename='charts/chart_subject_vs_level.png') }}" alt="Subject vs Difficulty Level">
+        </div>
+
+        <div class="chart-box wide">
+            <div class="chart-title">
+                <h3>Top 10 Resource Titles</h3>
+                <p>Highlights the most repeated resource titles in the cleaned dataset.</p>
+            </div>
+            <img src="{{ url_for('static', filename='charts/chart_top_titles.png') }}" alt="Top Resource Titles">
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Study Resource Explorer. All rights reserved.
+    </footer>
+
+</body>
+</html>
